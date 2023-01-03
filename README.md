@@ -43,11 +43,11 @@ $apt install git<br/>
 현재 도커 이미지 목록<br/> 
 -su mia || su root<br/> 
 도커 내에 진입하는 명령어<br/> 
--ctrl+pq
+-ctrl+pq<br/> 
 도커를 종료시키지 않고 잠시 정지시켜 빠져나오는 명령어<br/> 
--docker ps -a
+-docker ps -a<br/> 
 전체 컨테이너 목록 확인<br/> 
--docker ps
+-docker ps<br/> 
 현재 실행중인 컨테이너 목록 확인<br/> 
--docker images
+-docker images<br/> 
 도커 이미지 목록 확인 
