@@ -16,23 +16,24 @@
 
 
 
-
-1) ubuntu 이미지 실행  
-#ubuntu 이미지 다운로드  $ docker pull ubuntu  
-
-#my-ubuntu라는 컨테이너명으로 실행 (실행하자마자 bash 터미널에 연결 유지하기)  
-$docker run -it --name my-ubuntu ubuntu bash  
+### 관련 명령어
+> 1)ubuntu 이미지 실행  
+#ubuntu 이미지 다운로드  $ docker pull ubuntu<br/>
+#my-ubuntu라는 컨테이너명으로 실행 (실행하자마자 bash 터미널에 연결 유지하기)<br/>
+$docker run -it --name my-ubuntu ubuntu bash<br/>
+ex) sudo docker run -it -v /home/mia/Develop:/home/mia/workspace --name testC ubuntu-18.04-base<br/>
+우분투를 사용하여 home/mia/Develop...위치에 testC를 만든다<br/>
 <br><br>  
 
-2) 실행된 컨테이너에 git 설치<br/>  
-#apt 갱신<br/>  
+> 2)실행된 컨테이너에 git 설치<br/>
+#apt 갱신<br/>
 $apt update<br/>  
 
-#git 설치  
-$apt install git  
+> #git 설치<br/>
+$apt install git<br/>
 <br><br>  
 
-### 관련 명령어   
+### 관련 명령어2  
 > -도커 시작 시 docker start testA -> docker attach testA<br/>
 반드시 start 시켜 주고 난 후 attach 하기<br/> 
 -docker ps -a<br/> 
