@@ -15,26 +15,29 @@
 
 <br><br><br>
 
+## 도커 이미지 생성 및 컨테이너 생성 
+
+도커 이미지 생성시 도커 파일이 있는 디렉토리에서 생성해야함
+
+1. 도커 파일 ssh 이용하여 git clone 후 파일 생성
+> https://gitlab.drimaes.com/kms/build-docker 사이트 참조
+
+2. sudo docker build --force-rm -t ubuntu-18.04 --build-arg USERNAME=mia --build-arg PASSWORD=0714 --build-arg USERID=1000 --build-arg GROUPID=1000 .
+   명령어를 이용하여 image 생성. image 이름은 ubuntu 18... 유저아이디와 그룹아이디는 1000으로
+
+3. 이미지가 완료되면 컨테이너 만들기 (참고로 만들어진 컨테이너를 이미지로 다시 변경하여 배포할수도 있다) 
+   sudo docker run -it -v /home/mia/Develop/la-3.4.1:/home/mia/workspace/ --name la-3.4.1 ubuntu-18.04
+   
+   경로는 home/mia/Develop/la-3.4.1 파일안에 컨테이너를 만들고 home mia workspace 경로를 공유해서 이 컨테이너 파일을 만들면 workspace 경로에도 같이 만들어질수 있도록 한다. 컨테이너 이름은 la 3.4.1 우분투 이미지를 사용해서 만듬
+   
+ 
+ 
+ <br><br>
+ 
+ 
 
 
 ### 관련 명령어
-> 1)ubuntu 이미지 실행  
-#ubuntu 이미지 다운로드  $ docker pull ubuntu<br/>
-#my-ubuntu라는 컨테이너명으로 실행 (실행하자마자 bash 터미널에 연결 유지하기)<br/>
-$docker run -it --name my-ubuntu ubuntu bash<br/>
-ex) sudo docker run -it -v /home/mia/Develop:/home/mia/workspace --name testC ubuntu-18.04-base<br/>
-우분투를 사용하여 home/mia/Develop...위치에 testC를 만든다<br/>
-<br><br>  
-
-> 2)실행된 컨테이너에 git 설치<br/>
-#apt 갱신<br/>
-$apt update<br/>  
-
-> #git 설치<br/>
-$apt install git<br/>
-<br><br>  
-
-### 관련 명령어2  
 > -도커 시작 시 docker start testA -> docker attach testA<br/>
 반드시 start 시켜 주고 난 후 attach 하기<br/> 
 -docker ps -a<br/> 
@@ -52,7 +55,12 @@ $apt install git<br/>
 -docker images<br/> 
 도커 이미지 목록 확인 
 
+> 2)실행된 컨테이너에 git 설치<br/>
+#apt 갱신<br/>
+$apt update<br/>  
 
+> #git 설치<br/>
+$apt install git<br/>
+<br><br>  
+   
 
-
-https://gitlab.drimaes.com/kms/build-docker
